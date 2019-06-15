@@ -8,6 +8,7 @@ import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/form_demo.dart';
 
 void main() => runApp(App());
 
@@ -17,17 +18,19 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigateDemo(), //Home(),
-      initialRoute: '/', //不使用上面的，可用直接用initialRoute来规定跟路由
+      initialRoute: '/form', //不使用上面的，可用直接用initialRoute来规定跟路由
       routes: {
         // '/': (context) => NavigateDemo(),
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
+        '/form': (context) => FormDemo(),
       }, //已知路由，通过名字方法pushName
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         // primarySwatch: Colors.deepPurple,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
         splashColor: Colors.white70,
+        accentColor: Color.fromRGBO(3, 54, 255, 1.0)
       ),
     );
   }
