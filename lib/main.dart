@@ -7,6 +7,7 @@ import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
+import 'demo/navigator_demo.dart';
 
 void main() => runApp(App());
 
@@ -15,7 +16,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      // home: NavigateDemo(), //Home(),
+      initialRoute: '/', //不使用上面的，可用直接用initialRoute来规定跟路由
+      routes: {
+        // '/': (context) => NavigateDemo(),
+        '/': (context) => Home(),
+        '/about': (context) => Page(title: 'About'),
+      }, //已知路由，通过名字方法pushName
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         // primarySwatch: Colors.deepPurple,
