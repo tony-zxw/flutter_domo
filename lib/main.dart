@@ -27,7 +27,7 @@ class App extends StatelessWidget {
         '/about': (context) => Page(title: 'About'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
-        '/state-management': (context) => StateManagementDemo(),
+        '/state-management': (context) => StateManagementDemo1(),
       }, //已知路由，通过名字方法pushName
       theme: ThemeData( 
         primarySwatch: Colors.yellow,
