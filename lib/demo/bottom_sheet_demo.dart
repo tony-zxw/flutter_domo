@@ -77,10 +77,10 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
       case Option.A:
         res = 'A';
         break;
-      case Option.A:
+      case Option.B:
         res = 'B';
         break;
-      case Option.A:
+      case Option.C:
         res = 'C';
         break;
       default:
