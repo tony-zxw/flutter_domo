@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; //国际化功能
+import 'dart:async';
 
 class DateTimeDemo extends StatefulWidget {
   @override
@@ -7,14 +8,33 @@ class DateTimeDemo extends StatefulWidget {
 }
 
 class _DateTimeDemoState extends State<DateTimeDemo> {
-  final DateTime selectedDate = DateTime.now();
-  void _selectDate() {
-    showDatePicker(
+  DateTime selectedDate = DateTime.now();
+  TimeOfDay selectedTime = TimeOfDay(hour: 9, minute: 30);
+
+  //异步编程 可用使用 返回future 用 async await
+  Future<void> _selectDate() async {
+    final DateTime date = await showDatePicker(
       context: context,
       initialDate: selectedDate,
       firstDate: DateTime(1900),
       lastDate: DateTime(2100),
     );
+    if (date == null) return null;
+    setState(() {
+      selectedDate = date;
+    });
+  }
+
+  //异步编程 可用使用 返回future 用 async await
+  Future<void> _selectTime() async {
+    final TimeOfDay time = await showTimePicker(
+      context: context,
+      initialTime: selectedTime,
+    );
+    if (time == null) return null;
+    setState(() {
+      selectedTime = time;
+    });
   }
 
   @override
@@ -36,9 +56,18 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
                   onTap: _selectDate,
                   child: Row(
                     children: <Widget>[
-                      Text(DateFormat.yMd().format(selectedDate)),
-                      Text(DateFormat.yMMMd().format(selectedDate)),
+                      // Text(DateFormat.yMd().format(selectedDate)),
+                      // Text(DateFormat.yMMMd().format(selectedDate)),
                       Text(DateFormat.yMMMMd().format(selectedDate)),
+                      Icon(Icons.arrow_drop_down),
+                    ],
+                  ),
+                ),
+                InkWell(
+                  onTap: _selectTime,
+                  child: Row(
+                    children: <Widget>[
+                      Text(selectedTime.format(context)),
                       Icon(Icons.arrow_drop_down),
                     ],
                   ),
