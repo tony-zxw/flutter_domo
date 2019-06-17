@@ -9,7 +9,7 @@ import './switch_demo.dart';
 import './slider_demo.dart';
 import './datetime_demo.dart';
 import './simple_dialog_demo.dart';
-// import './alert_dialog_demo.dart';
+import './alert_dialog_demo.dart';
 // import './bottom_sheet_demo.dart';
 // import './snack_bar_demo.dart';
 // import './expansion_panel_demo.dart';
@@ -37,7 +37,7 @@ class MaterialComponents extends StatelessWidget {
           // ListItem(title: 'ExpansionPanel', page: ExpansionPanelDemo()),
           // ListItem(title: 'SnackBar', page: SnackBarDemo()),
           // ListItem(title: 'BottomSheet', page: BottomSheetDemo()),
-          // ListItem(title: 'AlertDialog', page: AlertDialogDemo()),
+          ListItem(title: 'AlertDialog', page: AlertDialogDemo()),
           ListItem(title: 'SimpleDialog', page: SimpleDialogDemo()),
           ListItem(title: 'Date & Time', page: DateTimeDemo()),
           ListItem(title: 'Slider', page: SliderDemo()),
