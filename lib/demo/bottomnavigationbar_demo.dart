@@ -12,6 +12,9 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
   void _onTapHandler(int index) {
     setState(() {
       _currentIndex = index;
+      if (_currentIndex == 2) {
+        Navigator.pushNamed(context, '/state-management');
+      }
     }); //StatefulWidget 才有的
   }
 
