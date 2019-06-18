@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_demo/demo/state/state_management_demo.dart';
+import 'package:flutter_demo/demo/stream/stream_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/bottomnavigationbar_demo.dart';
@@ -20,7 +21,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigateDemo(), //Home(),
-      initialRoute: '/state-management', //不使用上面的，可用直接用initialRoute来规定跟路由
+      initialRoute: '/stream', //不使用上面的，可用直接用initialRoute来规定跟路由
       routes: {
         // '/': (context) => NavigateDemo(),
         '/': (context) => Home(),
@@ -28,6 +29,7 @@ class App extends StatelessWidget {
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
         '/state-management': (context) => StateManagementDemo1(),
+        '/stream': (context) => StreamDemo(),
       }, //已知路由，通过名字方法pushName
       theme: ThemeData( 
         primarySwatch: Colors.yellow,
