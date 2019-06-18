@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_demo/demo/animation/animation_demo.dart';
 import 'package:flutter_demo/demo/bloc/bloc_demo.dart';
 import 'package:flutter_demo/demo/http/http_demo.dart';
+import 'package:flutter_demo/demo/i18n/i18n_demo.dart';
 import 'package:flutter_demo/demo/rxdart/rxdart_demo.dart';
 import 'package:flutter_demo/demo/state/state_management_demo.dart';
 import 'package:flutter_demo/demo/stream/stream_demo.dart';
@@ -23,9 +25,19 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        //国际化
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        //国际化
+        Locale('en', 'US'),//默认第一个
+        Locale('zh', 'CN'),
+      ],
       debugShowCheckedModeBanner: false,
       // home: NavigateDemo(), //Home(),
-      initialRoute: '/animation', //不使用上面的，可用直接用initialRoute来规定跟路由
+      initialRoute: '/i18n', //不使用上面的，可用直接用initialRoute来规定跟路由
       routes: {
         // '/': (context) => NavigateDemo(),
         '/': (context) => Home(),
@@ -38,6 +50,7 @@ class App extends StatelessWidget {
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
+        '/i18n': (context) => I18nDemo(),
       }, //已知路由，通过名字方法pushName
       theme: ThemeData(
           primarySwatch: Colors.yellow,
