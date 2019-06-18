@@ -71,7 +71,7 @@ class CounterBloc {
   void onData(int data) {
     print('$data');
     _count += data;
-    _counterController.add(_count);
+    _counterController.add(_count);//添加数据
   }
 
   void disponse() {
