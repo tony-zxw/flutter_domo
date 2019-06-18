@@ -18,26 +18,35 @@ import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_components.dart';
+import 'demo/i18n/map/demo_localizations.dart';
 
 void main() => runApp(App());
 
 class App extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return MaterialApp(
+      // locale: Locale('en', 'US'),
+      // locale: Locale('zh', 'CN'),
+      localeResolutionCallback:
+          (Locale locale, Iterable<Locale> supportedLocales) {
+        return Locale('en', 'US');
+      },
       localizationsDelegates: [
+        DemoLocalizationsDelegate(),//自定义本地化
         //国际化
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: [
         //国际化
-        Locale('en', 'US'),//默认第一个
+        Locale('en', 'US'), //默认第一个
         Locale('zh', 'CN'),
       ],
       debugShowCheckedModeBanner: false,
       // home: NavigateDemo(), //Home(),
       initialRoute: '/i18n', //不使用上面的，可用直接用initialRoute来规定跟路由
+      // initialRoute: '/mdc', //不使用上面的，可用直接用initialRoute来规定跟路由
       routes: {
         // '/': (context) => NavigateDemo(),
         '/': (context) => Home(),
