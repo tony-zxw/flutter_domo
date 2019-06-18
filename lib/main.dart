@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_demo/demo/bloc/bloc_demo.dart';
 import 'package:flutter_demo/demo/rxdart/rxdart_demo.dart';
 import 'package:flutter_demo/demo/state/state_management_demo.dart';
 import 'package:flutter_demo/demo/stream/stream_demo.dart';
@@ -22,7 +23,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigateDemo(), //Home(),
-      initialRoute: '/rxdart', //不使用上面的，可用直接用initialRoute来规定跟路由
+      initialRoute: '/bloc', //不使用上面的，可用直接用initialRoute来规定跟路由
       routes: {
         // '/': (context) => NavigateDemo(),
         '/': (context) => Home(),
@@ -32,6 +33,7 @@ class App extends StatelessWidget {
         '/state-management': (context) => StateManagementDemo1(),
         '/stream': (context) => StreamDemo(),
         '/rxdart': (context) => RxDartDemo(),
+        '/bloc': (context) => BlocDemo(),
       }, //已知路由，通过名字方法pushName
       theme: ThemeData( 
         primarySwatch: Colors.yellow,

@@ -13,7 +13,7 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
     setState(() {
       _currentIndex = index;
       if (_currentIndex == 2) {
-        Navigator.pushNamed(context, '/rxdart');
+        Navigator.pushNamed(context, '/bloc');
       }
     }); //StatefulWidget 才有的
   }
