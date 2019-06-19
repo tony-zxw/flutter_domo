@@ -18,7 +18,8 @@ import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_components.dart';
-import 'demo/i18n/map/demo_localizations.dart';
+// import 'demo/i18n/map/demo_localizations.dart';
+import 'demo/i18n/intl/intl_demo_localizations.dart';
 
 void main() => runApp(App());
 
@@ -28,10 +29,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       // locale: Locale('en', 'US'),
       // locale: Locale('zh', 'CN'),
-      localeResolutionCallback:
-          (Locale locale, Iterable<Locale> supportedLocales) {
-        return Locale('en', 'US');
-      },
+      // localeResolutionCallback:
+      //     (Locale locale, Iterable<Locale> supportedLocales) {
+      //   return Locale('en', 'US');
+      // },
       localizationsDelegates: [
         DemoLocalizationsDelegate(),//自定义本地化
         //国际化
