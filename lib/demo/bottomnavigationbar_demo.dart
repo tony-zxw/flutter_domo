@@ -13,7 +13,7 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
     setState(() {
       _currentIndex = index;
       if (_currentIndex == 2) {
-        Navigator.pushNamed(context, '/i18n');
+        Navigator.pushNamed(context, '/test');
       }
     }); //StatefulWidget 才有的
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_demo/demo/test/test_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_demo/demo/animation/animation_demo.dart';
 import 'package:flutter_demo/demo/bloc/bloc_demo.dart';
@@ -46,7 +47,7 @@ class App extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       // home: NavigateDemo(), //Home(),
-      initialRoute: '/i18n', //不使用上面的，可用直接用initialRoute来规定跟路由
+      initialRoute: '/test', //不使用上面的，可用直接用initialRoute来规定跟路由
       // initialRoute: '/mdc', //不使用上面的，可用直接用initialRoute来规定跟路由
       routes: {
         // '/': (context) => NavigateDemo(),
@@ -61,6 +62,7 @@ class App extends StatelessWidget {
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
         '/i18n': (context) => I18nDemo(),
+        '/test': (context) => TestDemo(),
       }, //已知路由，通过名字方法pushName
       theme: ThemeData(
           primarySwatch: Colors.yellow,
