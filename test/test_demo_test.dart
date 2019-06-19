@@ -30,15 +30,36 @@ void main() {
   // });
   //-----------
   //test class
+  //Unit testing
+
   test('shuold return hello +something.', () {
     var string = TonyTestDemo.greet('tony_zhang');
     expect(string, 'hello tony_zhang');
   });
 
-  //testWidgets
+  //widgets testing
   testWidgets('widget testing demo', (WidgetTester tester) async {
     await tester.pumpWidget(MaterialApp(
       home: TestDemo(),
     ));
+    final lableText = find.text('hello');
+    // expect(lableText, findsNothing);//没有找到
+    // expect(lableText, findsOneWidget);
+    expect(lableText, findsNWidgets(1));
+
+    final actionChipLabelText = find.text('0');
+    expect(actionChipLabelText, findsOneWidget);
+
+    final actionChip = find.byType(ActionChip);
+    expect(actionChip, findsOneWidget);
+    await tester.tap(actionChip); //点击widget
+    await tester.pump(); //重建widget
+
+    final actionChipLabelTextAfterTap = find.text('1');
+    expect(actionChipLabelTextAfterTap, findsOneWidget);
+    expect(actionChipLabelText, findsNothing);
   });
+
+  //Integration testing 需要flutter_driver包
+
 }
